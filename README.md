@@ -23,6 +23,7 @@ GitHub Pages で公開中のページ一覧です。
 | プロモスライドショー（暖色版） | https://yutorin-ino.github.io/Create-repository/promo/promo_warm.html |
 | プロモスライドショー（暖色・白文字版） | https://yutorin-ino.github.io/Create-repository/promo/promo_warm_white.html |
 | プロモスライドショー（人物入り版） | https://yutorin-ino.github.io/Create-repository/promo/promo_warm_white_person.html |
+| プロモスライドショー（スマホ横向き版） | https://yutorin-ino.github.io/Create-repository/promo/promo_warm_white_person_sp.html |
 
 ### tolviviov — スマートホームセキュリティ
 
