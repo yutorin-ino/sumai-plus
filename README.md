@@ -15,7 +15,7 @@ GitHub Pages で公開中のページ一覧です。
 | すまいPLUS 賃貸情報サービス LP | https://yutorin-ino.github.io/Create-repository/sumai-plus-lp/ |
 | すまいPLUS 賃貸情報サービス LP（画像付） | https://yutorin-ino.github.io/sumai-plus/ |
 | **Sumai＋ メインHP** | https://yutorin-ino.github.io/sumai-plus/index.html |
-| **Sumai＋ プロモーションLP** ✅ | https://yutorin-ino.github.io/sumai-plus/promo.html |
+| **Sumai＋ プロモーションLP（カルーセル付き）** ✅ | https://yutorin-ino.github.io/sumai-plus/promo.html |
 
 ### プロモーション動画スライドショー
 
@@ -93,11 +93,24 @@ sumai-plus/
 | ⑥ お客様の声 | 写真アバター付きレビュー |
 | ⑦ お問い合わせ | LINE / フォーム / 電話 |
 
+### ギャラリーカルーセル（promo.html）
+| 機能 | 内容 |
+|---|---|
+| 自動再生 | 4秒ごとに次スライドへ自動遷移 |
+| プログレスバー | 残り時間をバーで表示 |
+| 一時停止ボタン | ❚❚ ボタンで再生・停止切り替え |
+| 矢印ナビ | ← → ボタンで手動移動 |
+| ドットナビ | クリックで任意スライドへジャンプ |
+| スワイプ対応 | スマホで左右スワイプ操作 |
+| ホバー停止 | マウスオーバー中は自動再生を停止 |
+| キーボード操作 | ← → キーで移動、スペースで一時停止 |
+
 ### スマホ対応
 - 画面下部に固定フローティングCTA（LINE相談 / 無料相談 / 電話）
 - ハンバーガーメニュー
 - 電話番号タップ発信（`tel:` リンク）
 - スクロールフェードインアニメーション
+- カルーセルのタッチスワイプ対応
 
 ---
 
