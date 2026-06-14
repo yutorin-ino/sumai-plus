@@ -14,6 +14,8 @@ GitHub Pages で公開中のページ一覧です。
 |---|---|
 | すまいPLUS 賃貸情報サービス LP | https://yutorin-ino.github.io/Create-repository/sumai-plus-lp/ |
 | すまいPLUS 賃貸情報サービス LP（画像付） | https://yutorin-ino.github.io/sumai-plus/ |
+| **Sumai＋ メインHP** | https://yutorin-ino.github.io/sumai-plus/index.html |
+| **Sumai＋ プロモーションLP** | https://yutorin-ino.github.io/sumai-plus/promo.html |
 
 ### プロモーション動画スライドショー
 
