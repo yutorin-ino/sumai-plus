@@ -613,7 +613,7 @@
       送信内容の確認
     </div>
     <div class="modal-content" id="modalContent"></div>
-    <div class="modal-note">※LINEが開き、上記の内容が自動で入力されます。送信前にご確認いただけます。</div>
+    <div class="modal-note">※LINEが開き、上記の内容が自動で入力されます。送信ボタンを押して送信してください。</div>
     <div class="modal-btns">
       <button class="btn-cancel" onclick="closeModal()">キャンセル</button>
       <button class="btn-send" id="btnSend">
@@ -701,7 +701,7 @@ function buildMessage() {
   if (document.getElementById('option2').checked) opts.push(document.getElementById('opt2Text').textContent);
   if (document.getElementById('option3').checked) opts.push(document.getElementById('opt3Text').textContent);
 
-  let msg = `【AI概算見積もり結果】\n`;
+  let msg = `【リフォーム概算見積もり結果】\n`;
   msg += `─────────────\n`;
   msg += `📋 ${summary}\n`;
   msg += `💰 概算金額：${price}\n`;
@@ -726,7 +726,7 @@ function openModal() {
   document.getElementById('modalContent').textContent = msg;
   const encoded = encodeURIComponent(msg);
   document.getElementById('btnSend').onclick = function() {
-    window.open(`https://line.me/ti/p/@012bbuuk?text=${encoded}`, '_blank');
+    window.open('https://line.me/R/oaMessage/@012bbuuk/?text=' + encoded, '_blank');
     closeModal();
   };
   document.getElementById('modalOverlay').classList.add('active');
