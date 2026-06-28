@@ -125,17 +125,9 @@
       font-family: 'Noto Serif JP', serif;
       font-weight: 500;
     }
-    .hero h1 em {
-      color: var(--beige);
-      font-style: normal;
-    }
+    .hero h1 em { color: var(--beige); font-style: normal; }
     .hero p { color: rgba(255,255,255,0.8); font-size: 15px; max-width: 600px; }
-    .hero-pills {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
+    .hero-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
     .hero-pill {
       background: rgba(255,255,255,0.12);
       color: rgba(255,255,255,0.85);
@@ -162,12 +154,7 @@
       box-shadow: var(--shadow-card);
       border: 1px solid var(--gray-100);
     }
-    .card h2 {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
+    .card h2 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
     .card-lead { color: var(--gray-600); font-size: 13px; margin-bottom: 20px; }
 
     /* ===== FORM ===== */
@@ -195,10 +182,7 @@
       background-repeat: no-repeat;
       background-position: right 14px center;
     }
-    select:focus, input[type="text"]:focus {
-      outline: none;
-      border-color: var(--navy);
-    }
+    select:focus, input[type="text"]:focus { outline: none; border-color: var(--navy); }
     input[type="text"] { background-image: none; }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .size-hint { font-size: 12px; color: var(--gray-500); margin-top: 6px; line-height: 1.5; }
@@ -313,6 +297,10 @@
       box-shadow: 0 8px 20px rgba(6,199,85,0.25);
       margin-bottom: 10px;
       transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      width: 100%;
     }
     .cta-line:hover { background: #05b34a; transform: translateY(-1px); }
     .cta-tel {
@@ -366,6 +354,94 @@
       line-height: 1.8;
     }
     .page-footer a { color: var(--navy); text-decoration: underline; }
+
+    /* ===== MODAL ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 24px;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      animation: modalIn 0.2s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .modal-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .modal-content {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--gray-700);
+      margin-bottom: 20px;
+      white-space: pre-wrap;
+    }
+    .modal-note {
+      font-size: 12px;
+      color: var(--gray-500);
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+    .modal-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .btn-cancel {
+      border: 1.5px solid var(--gray-200);
+      background: white;
+      color: var(--gray-600);
+      border-radius: var(--radius-md);
+      padding: 13px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+    .btn-cancel:hover { border-color: var(--gray-500); color: var(--gray-700); }
+    .btn-send {
+      border: none;
+      background: var(--line-green);
+      color: white;
+      border-radius: var(--radius-md);
+      padding: 13px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background 0.15s;
+      box-shadow: 0 4px 12px rgba(6,199,85,0.3);
+    }
+    .btn-send:hover { background: #05b34a; }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 780px) {
@@ -494,13 +570,13 @@
           ⚠️ 概算のため、現地確認後に金額が前後します。<br>
           まずは写真をLINEで送るだけでもご相談いただけます。
         </div>
-        <a class="cta-line" href="https://line.me/" target="_blank" rel="noopener">
+        <button class="cta-line" onclick="openModal()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.04 2 11c0 2.96 1.56 5.57 4 7.27V22l3.44-1.89A11.2 11.2 0 0012 20.28C17.52 20.28 22 16.24 22 11S17.52 2 12 2z"/></svg>
-          写真を送って無料相談する（LINE）
-        </a>
-        <a class="cta-tel" href="tel:0000000000">
+          LINEで相談する
+        </button>
+        <a class="cta-tel" href="tel:08010958798">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .99h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 15.92z"/></svg>
-          電話で相談する　00-0000-0000
+          電話で相談する　080-1095-8798
         </a>
       </div>
 
@@ -529,24 +605,43 @@
 
 </main>
 
+<!-- ===== 確認モーダル ===== -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <div class="modal-title">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color:#06c755"><path d="M12 2C6.48 2 2 6.04 2 11c0 2.96 1.56 5.57 4 7.27V22l3.44-1.89A11.2 11.2 0 0012 20.28C17.52 20.28 22 16.24 22 11S17.52 2 12 2z"/></svg>
+      送信内容の確認
+    </div>
+    <div class="modal-content" id="modalContent"></div>
+    <div class="modal-note">※LINEが開き、上記の内容が自動で入力されます。送信前にご確認いただけます。</div>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeModal()">キャンセル</button>
+      <button class="btn-send" id="btnSend">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.04 2 11c0 2.96 1.56 5.57 4 7.27V22l3.44-1.89A11.2 11.2 0 0012 20.28C17.52 20.28 22 16.24 22 11S17.52 2 12 2z"/></svg>
+        LINEで送信する
+      </button>
+    </div>
+  </div>
+</div>
+
 <script>
 const data = {
-  toilet:   { name:'トイレ交換',   standard:[12,18], middle:[18,25], high:[25,40] },
-  bath:     { name:'ユニットバス交換', standard:[80,120], middle:[120,180], high:[180,300] },
-  kitchen:  { name:'キッチン交換', standard:[70,110], middle:[110,180], high:[180,350] },
-  washstand:{ name:'洗面台交換',   standard:[10,18], middle:[18,30], high:[30,55] },
-  wallpaper:{ name:'クロス張替え', standard:[4,8],   middle:[8,14],  high:[14,25] },
-  floor:    { name:'床張替え',     standard:[8,18],  middle:[18,35], high:[35,70] },
-  exterior_wall: { name:'外壁塗装', standard:[60,90], middle:[90,130], high:[130,200] }
+  toilet:   { name:'トイレ交換',      standard:[12,18],  middle:[18,25],  high:[25,40] },
+  bath:     { name:'ユニットバス交換', standard:[80,120], middle:[120,180],high:[180,300] },
+  kitchen:  { name:'キッチン交換',    standard:[70,110], middle:[110,180],high:[180,350] },
+  washstand:{ name:'洗面台交換',      standard:[10,18],  middle:[18,30],  high:[30,55] },
+  wallpaper:{ name:'クロス張替え',    standard:[4,8],    middle:[8,14],   high:[14,25] },
+  floor:    { name:'床張替え',        standard:[8,18],   middle:[18,35],  high:[35,70] },
+  exterior_wall: { name:'外壁塗装',  standard:[60,90],  middle:[90,130], high:[130,200] }
 };
 const exteriorData = {
-  fence:   { name:'フェンス設置', hint:'小：5m前後 / 標準：10m前後 / 大：20m前後', standard:[18,35], middle:[35,70], high:[70,130] },
-  carport: { name:'カーポート設置', hint:'小：1台用 / 標準：2台用 / 大：ワイド・高耐久仕様', standard:[25,45], middle:[45,80], high:[80,150] },
-  deck:    { name:'ウッドデッキ・人工木デッキ', hint:'小：1.5坪 / 標準：3坪 / 大：5坪以上', standard:[20,45], middle:[45,90], high:[90,180] },
-  gate:    { name:'門柱・機能門柱', hint:'表札・ポスト・宅配ボックスの有無で変動', standard:[12,28], middle:[28,55], high:[55,100] },
-  approach:{ name:'玄関アプローチ', hint:'小：部分施工 / 標準：通路一式 / 大：デザイン外構', standard:[20,45], middle:[45,90], high:[90,180] },
-  parking: { name:'駐車場土間コンクリート', hint:'小：1台分 / 標準：2台分 / 大：3台分以上', standard:[25,45], middle:[45,85], high:[85,160] },
-  garden:  { name:'庭まわり・雑草対策', hint:'防草シート・砂利・人工芝などで変動', standard:[10,30], middle:[30,70], high:[70,140] }
+  fence:   { name:'フェンス設置',          hint:'小：5m前後 / 標準：10m前後 / 大：20m前後',          standard:[18,35],  middle:[35,70],  high:[70,130] },
+  carport: { name:'カーポート設置',        hint:'小：1台用 / 標準：2台用 / 大：ワイド・高耐久仕様',  standard:[25,45],  middle:[45,80],  high:[80,150] },
+  deck:    { name:'ウッドデッキ・人工木デッキ', hint:'小：1.5坪 / 標準：3坪 / 大：5坪以上',        standard:[20,45],  middle:[45,90],  high:[90,180] },
+  gate:    { name:'門柱・機能門柱',        hint:'表札・ポスト・宅配ボックスの有無で変動',            standard:[12,28],  middle:[28,55],  high:[55,100] },
+  approach:{ name:'玄関アプローチ',        hint:'小：部分施工 / 標準：通路一式 / 大：デザイン外構',  standard:[20,45],  middle:[45,90],  high:[90,180] },
+  parking: { name:'駐車場土間コンクリート',hint:'小：1台分 / 標準：2台分 / 大：3台分以上',          standard:[25,45],  middle:[45,85],  high:[85,160] },
+  garden:  { name:'庭まわり・雑草対策',    hint:'防草シート・砂利・人工芝などで変動',                standard:[10,30],  middle:[30,70],  high:[70,140] }
 };
 const gradeName = { standard:'標準グレード', middle:'中級グレード', high:'高級グレード' };
 const sizeName  = { small:'小さめ', normal:'標準サイズ', large:'大きめ' };
@@ -592,6 +687,57 @@ function calc() {
   document.getElementById('mat').textContent     = rangeText(min * matRatMin, max * matRatMax);
   document.getElementById('work').textContent    = rangeText(min * wkRatMin, max * wkRatMax);
   document.getElementById('misc').textContent    = rangeText(min * msRatMin, max * msRatMax);
+}
+
+function buildMessage() {
+  const summary = document.getElementById('summary').textContent;
+  const price   = document.getElementById('price').textContent;
+  const mat     = document.getElementById('mat').textContent;
+  const work    = document.getElementById('work').textContent;
+  const misc    = document.getElementById('misc').textContent;
+  const area    = document.getElementById('area').value.trim();
+  const opts = [];
+  if (document.getElementById('option1').checked) opts.push(document.getElementById('opt1Text').textContent);
+  if (document.getElementById('option2').checked) opts.push(document.getElementById('opt2Text').textContent);
+  if (document.getElementById('option3').checked) opts.push(document.getElementById('opt3Text').textContent);
+
+  let msg = `【AI概算見積もり結果】\n`;
+  msg += `─────────────\n`;
+  msg += `📋 ${summary}\n`;
+  msg += `💰 概算金額：${price}\n`;
+  msg += `─────────────\n`;
+  msg += `　商品・材料費：${mat}\n`;
+  msg += `　基本工事費：${work}\n`;
+  msg += `　諸経費・処分費：${misc}\n`;
+  if (opts.length > 0) {
+    msg += `─────────────\n`;
+    msg += `📌 オプション：${opts.join('、')}\n`;
+  }
+  if (area) {
+    msg += `📍 施工エリア：${area}\n`;
+  }
+  msg += `─────────────\n`;
+  msg += `この内容を基準に相談したいです。`;
+  return msg;
+}
+
+function openModal() {
+  const msg = buildMessage();
+  document.getElementById('modalContent').textContent = msg;
+  const encoded = encodeURIComponent(msg);
+  document.getElementById('btnSend').onclick = function() {
+    window.open(`https://line.me/ti/p/@012bbuuk?text=${encoded}`, '_blank');
+    closeModal();
+  };
+  document.getElementById('modalOverlay').classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('active');
+}
+
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
 }
 
 ['category','subCategory','grade','size','option1','option2','option3'].forEach(id => {
