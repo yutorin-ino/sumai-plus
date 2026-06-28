@@ -166,7 +166,7 @@
       margin: 18px 0 7px;
     }
     .form-label:first-of-type { margin-top: 0; }
-    select, input[type="text"] {
+    select, input[type="text"], input[type="tel"], input[type="email"] {
       width: 100%;
       padding: 12px 14px;
       border-radius: var(--radius-md);
@@ -178,12 +178,14 @@
       transition: border-color 0.2s;
       appearance: none;
       -webkit-appearance: none;
+    }
+    select {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 14px center;
     }
-    select:focus, input[type="text"]:focus { outline: none; border-color: var(--navy); }
-    input[type="text"] { background-image: none; }
+    select:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus { outline: none; border-color: var(--navy); }
+    input[type="text"], input[type="tel"], input[type="email"] { background-image: none; }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .size-hint { font-size: 12px; color: var(--gray-500); margin-top: 6px; line-height: 1.5; }
 
@@ -345,6 +347,89 @@
     .step-body strong { font-size: 14px; color: var(--navy); display: block; }
     .step-body span { font-size: 12px; color: var(--gray-500); }
 
+    /* ===== CONTACT FORM SECTION ===== */
+    .contact-section {
+      margin-top: 32px;
+    }
+    .contact-section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+      font-family: 'Noto Serif JP', serif;
+    }
+    .contact-section-lead {
+      font-size: 14px;
+      color: var(--gray-600);
+      margin-bottom: 20px;
+    }
+    .contact-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--gray-100);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .contact-field { display: flex; flex-direction: column; }
+    .contact-field.full { grid-column: 1 / -1; }
+    .contact-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge-req {
+      background: #e53e3e;
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .badge-opt {
+      background: var(--gray-200);
+      color: var(--gray-600);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .contact-submit {
+      width: 100%;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 24px;
+      background: var(--line-green);
+      color: white;
+      font-family: inherit;
+      box-shadow: 0 8px 24px rgba(6,199,85,0.25);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .contact-submit:hover { background: #05b34a; transform: translateY(-1px); }
+    .contact-note {
+      font-size: 12px;
+      color: var(--gray-500);
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.7;
+    }
+
     /* ===== FOOTER ===== */
     .page-footer {
       margin-top: 32px;
@@ -450,6 +535,9 @@
       .grid { grid-template-columns: 1fr; }
       .row { grid-template-columns: 1fr; }
       .result-price { font-size: 30px; }
+      .contact-card { padding: 20px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-field.full { grid-column: 1; }
     }
   </style>
 </head>
@@ -568,7 +656,7 @@
         </div>
         <div class="warn-box">
           ⚠️ 概算のため、現地確認後に金額が前後します。<br>
-          まずは写真をLINEで送るだけでもご相談いただけます。
+          下のフォームにご連絡先を入力して送信してください。
         </div>
         <button class="cta-line" onclick="openModal()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.04 2 11c0 2.96 1.56 5.57 4 7.27V22l3.44-1.89A11.2 11.2 0 0012 20.28C17.52 20.28 22 16.24 22 11S17.52 2 12 2z"/></svg>
@@ -587,13 +675,65 @@
         </div>
         <div class="step-item">
           <div class="step-num">2</div>
-          <div class="step-body"><strong>LINEで写真送付</strong><span>現地調査前に内容を確認</span></div>
+          <div class="step-body"><strong>フォームで連絡先を送信</strong><span>概算結果と一緒にLINEへ</span></div>
         </div>
         <div class="step-item">
           <div class="step-num">3</div>
           <div class="step-body"><strong>現地確認・正式見積もり</strong><span>納得いただいてから工事へ</span></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== お問い合わせフォーム ===== -->
+  <section class="contact-section">
+    <div class="contact-card">
+      <h2 class="contact-section-title">📋 ご連絡先を入力して送信</h2>
+      <p class="contact-section-lead">概算結果とあわせてLINEに転送されます。折り返しご連絡いたします。</p>
+
+      <div class="contact-grid">
+        <div class="contact-field">
+          <label class="contact-label" for="contactName">
+            お名前
+            <span class="badge-req">必須</span>
+          </label>
+          <input type="text" id="contactName" placeholder="例：山田 太郎" />
+        </div>
+        <div class="contact-field">
+          <label class="contact-label" for="contactTel">
+            電話番号
+            <span class="badge-req">必須</span>
+          </label>
+          <input type="tel" id="contactTel" placeholder="例：090-1234-5678" />
+        </div>
+        <div class="contact-field">
+          <label class="contact-label" for="contactEmail">
+            メールアドレス
+            <span class="badge-opt">任意</span>
+          </label>
+          <input type="email" id="contactEmail" placeholder="例：sample@email.com" />
+        </div>
+        <div class="contact-field">
+          <label class="contact-label" for="contactTime">
+            ご希望の連絡時間帯
+            <span class="badge-opt">任意</span>
+          </label>
+          <select id="contactTime">
+            <option value="">-- 選択してください --</option>
+            <option value="午前中（9〜12時）">午前中（9〜12時）</option>
+            <option value="昼（12〜14時）">昼（12〜14時）</option>
+            <option value="午後（14〜17時）">午後（14〜17時）</option>
+            <option value="夕方（17〜19時）">夕方（17〜19時）</option>
+            <option value="いつでも可">いつでも可</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="contact-submit" onclick="submitContact()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.04 2 11c0 2.96 1.56 5.57 4 7.27V22l3.44-1.89A11.2 11.2 0 0012 20.28C17.52 20.28 22 16.24 22 11S17.52 2 12 2z"/></svg>
+        概算結果＋連絡先をLINEで送信する
+      </button>
+      <p class="contact-note">※LINEが開き、概算内容とご連絡先が自動入力されます。送信ボタンを押して完了です。<br>しつこい営業は一切いたしません。</p>
     </div>
   </section>
 
@@ -689,7 +829,7 @@ function calc() {
   document.getElementById('misc').textContent    = rangeText(min * msRatMin, max * msRatMax);
 }
 
-function buildMessage() {
+function buildEstimateText() {
   const summary = document.getElementById('summary').textContent;
   const price   = document.getElementById('price').textContent;
   const mat     = document.getElementById('mat').textContent;
@@ -713,12 +853,12 @@ function buildMessage() {
     msg += `─────────────\n`;
     msg += `📌 オプション：${opts.join('、')}\n`;
   }
-  if (area) {
-    msg += `📍 施工エリア：${area}\n`;
-  }
-  msg += `─────────────\n`;
-  msg += `この内容を基準に相談したいです。`;
+  if (area) msg += `📍 施工エリア：${area}\n`;
   return msg;
+}
+
+function buildMessage() {
+  return buildEstimateText() + `─────────────\nこの内容を基準に相談したいです。`;
 }
 
 function openModal() {
@@ -730,6 +870,29 @@ function openModal() {
     closeModal();
   };
   document.getElementById('modalOverlay').classList.add('active');
+}
+
+function submitContact() {
+  const name  = document.getElementById('contactName').value.trim();
+  const tel   = document.getElementById('contactTel').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  const time  = document.getElementById('contactTime').value;
+
+  if (!name) { alert('お名前を入力してください。'); document.getElementById('contactName').focus(); return; }
+  if (!tel)  { alert('電話番号を入力してください。'); document.getElementById('contactTel').focus(); return; }
+
+  let msg = buildEstimateText();
+  msg += `─────────────\n`;
+  msg += `【ご連絡先】\n`;
+  msg += `👤 お名前：${name}\n`;
+  msg += `📞 電話番号：${tel}\n`;
+  if (email) msg += `📧 メール：${email}\n`;
+  if (time)  msg += `🕐 希望連絡時間：${time}\n`;
+  msg += `─────────────\n`;
+  msg += `上記の内容でご連絡をお待ちしています。`;
+
+  const encoded = encodeURIComponent(msg);
+  window.open('https://line.me/R/oaMessage/@012bbuuk/?text=' + encoded, '_blank');
 }
 
 function closeModal() {
