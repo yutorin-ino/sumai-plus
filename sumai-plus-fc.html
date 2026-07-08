@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>すまいPLUS｜一宮・稲沢・江南のリフォーム相談窓口｜外壁・屋根・水回り・省エネ</title>
+<meta name="description" content="愛知県一宮市のリフォーム専門店「すまいPLUS」。住まいサポートPRO加盟店として、外壁塗装・屋根・水回り・太陽光蓄電池まで幅広く対応。完全元請けで中間マージンなし。相談無料・押し売りなし。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-dark:#2D5016;
+  --green-mid:#4A7C2A;
+  --green-light:#7AAF4A;
+  --green-pale:#EEF5E6;
+  --green-bg:#F6FAF0;
+  --cream:#FDFCF8;
+  --text-primary:#1A1A1A;
+  --text-secondary:#555;
+  --text-muted:#888;
+  --border:#DDE8CC;
+  --white:#FFFFFF;
+  --radius:12px;
+  --radius-sm:8px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text-primary);background:var(--cream);line-height:1.8;font-size:16px}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:100;background:rgba(253,252,248,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 24px}
+.header-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:var(--green-dark);text-decoration:none;letter-spacing:.04em;display:flex;flex-direction:column;line-height:1.2}
+.logo-sub{font-size:10px;font-weight:400;color:var(--text-muted);letter-spacing:.06em;font-family:'Noto Sans JP',sans-serif}
+.logo span{color:var(--green-light)}
+.header-cta{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:99px;font-size:14px;font-weight:500;text-decoration:none;cursor:pointer;border:none;transition:all .2s;font-family:'Noto Sans JP',sans-serif}
+.btn-primary{background:var(--green-mid);color:#fff}
+.btn-primary:hover{background:var(--green-dark)}
+.btn-outline{background:transparent;color:var(--green-dark);border:1.5px solid var(--green-mid)}
+.btn-outline:hover{background:var(--green-pale)}
+.btn-lg{padding:14px 32px;font-size:16px}
+.btn-line{background:#06C755;color:#fff}
+.btn-line:hover{background:#05a847}
+.btn-tel{background:var(--green-dark);color:#fff}
+.btn-tel:hover{background:#1e3a0f}
+
+/* HERO */
+.hero{background:linear-gradient(155deg,var(--green-bg) 0%,var(--cream) 55%);padding:72px 24px 56px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(122,175,74,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hero-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.fc-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--green-mid);padding:6px 14px;border-radius:99px;font-size:12px;font-weight:700;color:var(--green-dark);margin-bottom:16px}
+.fc-badge-dot{width:8px;height:8px;background:var(--green-mid);border-radius:50%;flex-shrink:0}
+.hero h1{font-family:'Noto Serif JP',serif;font-size:clamp(24px,3.8vw,38px);font-weight:700;line-height:1.5;color:var(--green-dark);margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--green-mid);border-bottom:3px solid var(--green-light);padding-bottom:2px}
+.hero-area{font-size:13px;color:var(--text-muted);margin-bottom:12px}
+.hero-area span{color:var(--green-mid);font-weight:500}
+.hero-sub{font-size:15px;color:var(--text-secondary);line-height:1.9;margin-bottom:28px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.hero-trust{display:flex;gap:16px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary)}
+.trust-check{width:18px;height:18px;background:var(--green-mid);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}
+.hero-visual{background:var(--green-pale);border-radius:var(--radius);border:1px solid var(--border);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-visual-inner{text-align:center;padding:24px}
+.hero-visual-icon{font-size:52px;margin-bottom:12px;display:block}
+
+/* STATS BAR */
+.stats-bar{background:var(--green-dark);padding:28px 24px}
+.stats-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat-item{text-align:center;padding:8px}
+.stat-num{font-size:clamp(22px,3vw,32px);font-weight:700;color:#fff;font-family:'Noto Serif JP',serif;line-height:1.2}
+.stat-num span{font-size:.55em;font-weight:400}
+.stat-label{font-size:12px;color:rgba(255,255,255,.65);margin-top:4px}
+
+/* SECTIONS */
+section{padding:72px 24px}
+section:nth-child(even){background:var(--white)}
+.section-inner{max-width:1080px;margin:0 auto}
+.section-label{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--green-mid);text-transform:uppercase;margin-bottom:8px}
+.section-heading{font-family:'Noto Serif JP',serif;font-size:clamp(22px,3vw,30px);font-weight:700;color:var(--green-dark);margin-bottom:12px;line-height:1.5}
+.section-sub{font-size:15px;color:var(--text-secondary);margin-bottom:48px;max-width:600px;line-height:1.9}
+
+/* MENU GRID */
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
+.menu-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px 16px;text-align:center;transition:box-shadow .2s,transform .2s;cursor:default}
+.menu-card:hover{box-shadow:0 4px 20px rgba(45,80,22,.1);transform:translateY(-2px)}
+.menu-icon{font-size:36px;margin-bottom:12px;display:block}
+.menu-title{font-size:14px;font-weight:700;color:var(--green-dark);margin-bottom:6px}
+.menu-body{font-size:12px;color:var(--text-muted);line-height:1.7}
+
+/* GENUKE MERIT */
+.genuke-wrap{background:var(--green-pale);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-top:0}
+.genuke-title{font-size:18px;font-weight:700;color:var(--green-dark);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.genuke-title::before{content:'';width:4px;height:24px;background:var(--green-mid);border-radius:2px;flex-shrink:0}
+.genuke-sub{font-size:14px;color:var(--text-secondary);margin-bottom:24px;line-height:1.8}
+.genuke-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.genuke-card{background:var(--white);border-radius:var(--radius-sm);border:1px solid var(--border);padding:20px}
+.genuke-card-title{font-size:14px;font-weight:700;color:var(--green-dark);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.genuke-card-title::before{content:'✓';color:var(--green-mid);font-weight:700}
+.genuke-card-body{font-size:13px;color:var(--text-secondary);line-height:1.7}
+
+/* REASONS */
+.reasons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.reason-card{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.reason-num{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--green-light);margin-bottom:10px}
+.reason-title{font-size:16px;font-weight:700;color:var(--green-dark);margin-bottom:10px;line-height:1.5}
+.reason-body{font-size:14px;color:var(--text-secondary);line-height:1.8}
+
+/* FLOW */
+.flow-list{display:flex;flex-direction:column;gap:0;max-width:680px}
+.flow-item{display:flex;gap:20px;align-items:flex-start;position:relative;padding-bottom:32px}
+.flow-item:last-child{padding-bottom:0}
+.flow-item::after{content:'';position:absolute;left:20px;top:44px;width:2px;height:calc(100% - 44px);background:var(--border)}
+.flow-item:last-child::after{display:none}
+.flow-num{width:40px;height:40px;flex-shrink:0;background:var(--green-mid);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;position:relative;z-index:1}
+.flow-content{padding-top:8px}
+.flow-title{font-size:16px;font-weight:700;color:var(--green-dark);margin-bottom:6px}
+.flow-body{font-size:14px;color:var(--text-secondary);line-height:1.8}
+
+/* WORKS */
+.works-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.work-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.work-img{aspect-ratio:4/3;background:var(--green-pale);display:flex;align-items:center;justify-content:center;font-size:36px}
+.work-body{padding:16px}
+.work-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.tag{font-size:11px;padding:3px 8px;border-radius:99px;background:var(--green-pale);color:var(--green-dark);border:1px solid var(--border)}
+.work-title{font-size:14px;font-weight:500;color:var(--text-primary);line-height:1.6}
+
+/* VOICE */
+.voice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.voice-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;position:relative}
+.voice-card::before{content:'"';font-family:'Noto Serif JP',serif;font-size:64px;line-height:1;color:var(--border);position:absolute;top:12px;left:16px;font-weight:700}
+.voice-quote{font-size:14px;color:var(--text-primary);line-height:1.9;margin-bottom:16px;padding-top:16px}
+.voice-profile{font-size:12px;color:var(--text-muted);border-top:1px solid var(--border);padding-top:12px;display:flex;align-items:center;gap:6px}
+.voice-profile::before{content:'★★★★★';color:#F4B400;font-size:11px}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:760px}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden}
+.faq-q{padding:18px 20px;font-size:15px;font-weight:500;color:var(--green-dark);display:flex;gap:12px;align-items:flex-start}
+.faq-q-badge{width:24px;height:24px;flex-shrink:0;background:var(--green-mid);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.faq-a{padding:0 20px 18px 56px;font-size:14px;color:var(--text-secondary);line-height:1.9}
+
+/* AREA */
+.area-wrap{background:var(--green-pale);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-top:48px}
+.area-title{font-size:15px;font-weight:700;color:var(--green-dark);margin-bottom:16px}
+.area-tags{display:flex;flex-wrap:wrap;gap:8px}
+.area-tag{font-size:13px;padding:6px 14px;background:var(--white);border:1px solid var(--border);border-radius:99px;color:var(--green-dark)}
+
+/* CTA */
+.cta-section{background:var(--green-dark);color:#fff;padding:80px 24px;text-align:center}
+.cta-section .section-label{color:var(--green-light) !important}
+.cta-heading{font-family:'Noto Serif JP',serif;font-size:clamp(22px,3vw,30px);font-weight:700;color:#fff !important;margin-bottom:10px;display:block}
+.cta-sub{font-size:15px;color:rgba(255,255,255,.8) !important;margin-bottom:36px;line-height:1.9;display:block}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.cta-notes{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.cta-note{font-size:13px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:6px}
+.cta-note::before{content:'✓';color:var(--green-light)}
+
+/* FORM */
+.form-wrap{max-width:540px;margin:0 auto;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);padding:32px}
+.form-title{font-size:16px;font-weight:500;color:#fff;margin-bottom:24px;text-align:center}
+.form-group{margin-bottom:16px}
+.form-label{display:block;font-size:13px;color:rgba(255,255,255,.7);margin-bottom:6px}
+.form-input,.form-textarea{width:100%;padding:12px 14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius-sm);color:#fff;font-size:15px;font-family:'Noto Sans JP',sans-serif;outline:none;transition:border .2s}
+.form-input::placeholder,.form-textarea::placeholder{color:rgba(255,255,255,.3)}
+.form-input:focus,.form-textarea:focus{border-color:var(--green-light)}
+.form-textarea{height:100px;resize:vertical}
+.form-submit{width:100%;background:var(--green-light);color:#fff;border:none;border-radius:99px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:background .2s;margin-top:8px}
+.form-submit:hover{background:var(--green-mid)}
+.form-privacy{text-align:center;margin-top:12px;font-size:12px;color:rgba(255,255,255,.4)}
+.form-privacy a{color:rgba(255,255,255,.5)}
+
+/* FIXED MOBILE CTA */
+.fixed-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--border);padding:12px 16px;z-index:200;gap:10px}
+
+/* FOOTER */
+footer{background:var(--text-primary);color:rgba(255,255,255,.6);padding:40px 24px;text-align:center}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:4px}
+.footer-fc{font-size:11px;color:rgba(255,255,255,.4);margin-bottom:12px;letter-spacing:.06em}
+.footer-address{font-size:13px;margin-bottom:6px}
+.footer-tel{font-size:18px;color:#fff;font-weight:500;margin-bottom:16px}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.3)}
+
+/* RESPONSIVE */
+@media(max-width:680px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .hero{padding:52px 20px 44px}
+  section{padding:56px 20px}
+  .header-cta .btn-outline{display:none}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .fixed-cta{display:flex}
+  body{padding-bottom:72px}
+  .flow-item::after{left:19px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      すまい<span>PLUS</span>
+      <span class="logo-sub">住まいサポートPRO 加盟店｜一宮・稲沢・江南</span>
+    </a>
+    <div class="header-cta">
+      <a href="tel:0801095879800" class="btn btn-outline">📞 080-1095-8798</a>
+      <a href="https://line.me/ti/p/@012bbuuk" class="btn btn-primary" target="_blank" rel="noopener">LINE無料相談</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="fc-badge">
+        <span class="fc-badge-dot"></span>
+        住まいサポートPRO 公式加盟店
+      </div>
+      <p class="hero-area">対応エリア：<span>一宮市・稲沢市・江南市・各務原・岐阜南部</span></p>
+      <h1>一宮の住まいの悩み、<br><em>すまいPLUS</em>に<br>まるごと相談できます</h1>
+      <p class="hero-sub">
+        外壁・屋根・水回り・省エネ設備まで幅広く対応。<br>
+        完全元請けで中間マージンなし。<br>
+        新築・リフォーム営業23年のプロが丁寧にサポートします。
+      </p>
+      <div class="hero-btns">
+        <a href="https://line.me/ti/p/@012bbuuk" class="btn btn-line btn-lg" target="_blank" rel="noopener">📩 LINEで無料相談</a>
+        <a href="#contact" class="btn btn-outline btn-lg">フォームで相談</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><div class="trust-check">✓</div>相談・見積り無料</div>
+        <div class="trust-item"><div class="trust-check">✓</div>完全元請け・中間マージンなし</div>
+        <div class="trust-item"><div class="trust-check">✓</div>押し売り一切なし</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-visual-inner">
+        <span class="hero-visual-icon">🏠</span>
+        <div style="font-size:13px;color:var(--green-dark);font-weight:500">施工写真を掲載予定</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px">外壁・屋根・内装リフォーム事例</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">4,000<span>件以上/月</span></div>
+      <div class="stat-label">本部グループ全国お問い合わせ数</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">80<span>%超</span></div>
+      <div class="stat-label">現地調査からの受注率</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">23<span>年</span></div>
+      <div class="stat-label">担当者の住宅営業キャリア</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0<span>円</span></div>
+      <div class="stat-label">相談・見積り費用</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE MENU -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">SERVICE MENU</div>
+    <h2 class="section-heading">対応工事メニュー</h2>
+    <p class="section-sub">小規模な修繕から大規模リフォームまで、住まいに関わるあらゆる工事に対応します。</p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <span class="menu-icon">🏚️</span>
+        <div class="menu-title">外装リフォーム</div>
+        <div class="menu-body">外壁塗装・カバー工法・サイディング張り替えで建物を守り美観を回復</div>
+      </div>
+      <div class="menu-card">
+        <span class="menu-icon">🏗️</span>
+        <div class="menu-title">屋根リフォーム</div>
+        <div class="menu-body">屋根塗装・葺き替え・カバー工法。雨漏り対策・遮熱断熱性能を向上</div>
+      </div>
+      <div class="menu-card">
+        <span class="menu-icon">🚿</span>
+        <div class="menu-title">水回りリフォーム</div>
+        <div class="menu-body">キッチン・浴室・トイレ・洗面台の交換・リニューアルに対応</div>
+      </div>
+      <div class="menu-card">
+        <span class="menu-icon">🛋️</span>
+        <div class="menu-title">内装リフォーム</div>
+        <div class="menu-body">クロス・床・建具・断熱内窓など、室内の快適性を高めるリフォーム</div>
+      </div>
+      <div class="menu-card">
+        <span class="menu-icon">☀️</span>
+        <div class="menu-title">省エネ設備</div>
+        <div class="menu-body">太陽光・蓄電池・エコキュート・オール電化で光熱費を削減</div>
+      </div>
+      <div class="menu-card">
+        <span class="menu-icon">🌿</span>
+        <div class="menu-title">外構・解体</div>
+        <div class="menu-body">門扉・フェンス・駐車場など外構工事と戸建・物置の解体にも対応</div>
+      </div>
+    </div>
+
+    <!-- 完全元請けの強み -->
+    <div class="genuke-wrap" style="margin-top:40px">
+      <div class="genuke-title">完全元請けだから実現できること</div>
+      <div class="genuke-sub">すまいPLUSは住まいサポートPRO加盟店として、中間業者を介さない完全元請け体制で工事を提供します。これにより、お客様により良い工事をリーズナブルにご提案できます。</div>
+      <div class="genuke-grid">
+        <div class="genuke-card">
+          <div class="genuke-card-title">中間マージンなし</div>
+          <div class="genuke-card-body">中間業者を挟まないため、コストを抑えながら高品質な工事を実現</div>
+        </div>
+        <div class="genuke-card">
+          <div class="genuke-card-title">責任の一本化</div>
+          <div class="genuke-card-body">提案から施工・アフターまで一貫対応。何かあればすぐ相談できる</div>
+        </div>
+        <div class="genuke-card">
+          <div class="genuke-card-title">迅速な対応</div>
+          <div class="genuke-card-body">地域密着で素早く動ける。急ぎの修繕や相談にも柔軟に対応</div>
+        </div>
+        <div class="genuke-card">
+          <div class="genuke-card-title">本部の全国ネットワーク</div>
+          <div class="genuke-card-body">住まいサポートPROの熟練職人ネットワークで、あらゆる工事に対応</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REASONS -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">WHY SUMAI PLUS</div>
+    <h2 class="section-heading">すまいPLUSが選ばれる理由</h2>
+    <p class="section-sub">全国ブランドの信頼と、地元一宮ならではの細やかな対応を両立しています。</p>
+    <div class="reasons-grid">
+      <div class="reason-card">
+        <div class="reason-num">REASON 01</div>
+        <div class="reason-title">住まいサポートPRO加盟店の安心感</div>
+        <div class="reason-body">全国実績のある住まいサポートPROの加盟店として、品質基準・対応マニュアルを遵守。安心してお任せいただけます。</div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">REASON 02</div>
+        <div class="reason-title">相談無料・押し売りなし</div>
+        <div class="reason-body">まずは話を聞くだけでOK。見積り後でもお断りいただけます。23年のキャリアで培ったお客様ファーストの姿勢を大切にしています。</div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">REASON 03</div>
+        <div class="reason-title">外壁から省エネまで一社完結</div>
+        <div class="reason-body">複数の業者を探す手間が不要。外装・水回り・省エネ設備まで、すまいPLUS一社にお任せいただけます。</div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">REASON 04</div>
+        <div class="reason-title">一宮エリア密着23年</div>
+        <div class="reason-body">地元の気候・建物の特性を知り尽くした担当者が対応。近くにいるから、急な相談にも素早く動けます。</div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">REASON 05</div>
+        <div class="reason-title">低価格・高品質を両立</div>
+        <div class="reason-body">完全元請けで中間マージンをカット。他社より低価格な提案をしながら、高い施工品質を維持します。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">HOW IT WORKS</div>
+    <h2 class="section-heading">ご利用の流れ</h2>
+    <p class="section-sub">相談から完成まで、すべてのステップで丁寧にサポートします。</p>
+    <div class="flow-list">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div class="flow-content">
+          <div class="flow-title">お問い合わせ（LINE・電話・フォーム）</div>
+          <div class="flow-body">LINEが一番お気軽です。写真を送るだけで概算の目安をお伝えできる場合もあります。</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div class="flow-content">
+          <div class="flow-title">無料ヒアリング</div>
+          <div class="flow-body">お悩み・ご要望・予算感を丁寧に伺います。この段階では費用は一切かかりません。</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">3</div>
+        <div class="flow-content">
+          <div class="flow-title">現地調査・無料お見積り</div>
+          <div class="flow-body">担当者が訪問し、建物の状態を確認。プロの視点からアドバイスを添えてお見積りをご提示します。</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">4</div>
+        <div class="flow-content">
+          <div class="flow-title">ご提案・ご契約</div>
+          <div class="flow-body">内容・費用にご納得いただいてからのご契約です。急かすことは一切ありません。</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">5</div>
+        <div class="flow-content">
+          <div class="flow-title">施工・完成確認</div>
+          <div class="flow-body">工事終了後はお客様と一緒に仕上がりをご確認。ご納得いただいてからお支払いです。</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">6</div>
+        <div class="flow-content">
+          <div class="flow-title">アフターフォロー</div>
+          <div class="flow-body">完成後もいつでもご相談ください。長くお付き合いいただける関係を大切にしています。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">WORKS</div>
+    <h2 class="section-heading">施工事例</h2>
+    <p class="section-sub">一宮エリアでの実際の施工事例をご紹介します。</p>
+    <div class="works-grid">
+      <div class="work-card">
+        <div class="work-img">🏚️</div>
+        <div class="work-body">
+          <div class="work-tags"><span class="tag">外壁塗装</span><span class="tag">一宮市</span></div>
+          <div class="work-title">築20年の外壁を全面塗り替え。防水性と美観を回復</div>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-img">🏗️</div>
+        <div class="work-body">
+          <div class="work-tags"><span class="tag">屋根葺き替え</span><span class="tag">稲沢市</span></div>
+          <div class="work-title">雨漏りが続いていた屋根を葺き替え。遮熱効果も向上</div>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-img">🚿</div>
+        <div class="work-body">
+          <div class="work-tags"><span class="tag">水回り</span><span class="tag">江南市</span></div>
+          <div class="work-title">キッチン・浴室・洗面を同時リフォームで費用を抑えて一新</div>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-img">☀️</div>
+        <div class="work-body">
+          <div class="work-tags"><span class="tag">太陽光</span><span class="tag">蓄電池</span></div>
+          <div class="work-title">太陽光＋蓄電池の導入で光熱費を大幅削減</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">CUSTOMER VOICE</div>
+    <h2 class="section-heading">お客様の声</h2>
+    <p class="section-sub">ご相談・ご依頼いただいたお客様からの声をご紹介します。</p>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="voice-quote">外壁の劣化が気になっていたので相談しました。費用の説明がわかりやすく、他社より安く仕上げていただけて大満足です。</div>
+        <div class="voice-profile">50代・女性・一宮市</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-quote">雨漏りが心配で問い合わせたところ、すぐに現地確認に来てくれました。丁寧な説明で安心して工事をお任せできました。</div>
+        <div class="voice-profile">60代・男性・稲沢市</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-quote">太陽光と蓄電池の導入を検討していましたが、補助金の説明も含めてとても丁寧に教えていただけました。</div>
+        <div class="voice-profile">40代・夫婦・江南市</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-heading">よくある質問</h2>
+    <p class="section-sub">ご相談前によく寄せられる疑問にお答えします。</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-badge">Q</div>相談・見積りは本当に無料ですか？</div>
+        <div class="faq-a">はい、完全無料です。現地調査・お見積りまで費用は一切かかりません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-badge">Q</div>見積り後に断っても大丈夫ですか？</div>
+        <div class="faq-a">もちろんです。お断りいただいても全く問題ありません。納得いただいてからのご契約です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-badge">Q</div>小さな修繕でも相談できますか？</div>
+        <div class="faq-a">はい、一箇所からでも歓迎です。「これくらいで頼んでいいのかな？」という内容でもお気軽にどうぞ。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-badge">Q</div>対応エリアはどこですか？</div>
+        <div class="faq-a">一宮市を中心に、稲沢市・江南市・各務原市・岐阜南部エリアに対応しています。まずはご相談ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-badge">Q</div>リフォームローンは使えますか？</div>
+        <div class="faq-a">はい、各種リフォームローンに対応しています。月々のご負担を抑えたプランもご相談いただけます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-badge">Q</div>「住まいサポートPRO」とは何ですか？</div>
+        <div class="faq-a">株式会社EBISUGROUPが運営するリフォーム専門フランチャイズです。全国で月間4,000件以上の実績を持つブランドで、すまいPLUSはその公式加盟店として品質基準を遵守しています。</div>
+      </div>
+    </div>
+
+    <!-- エリアタグ -->
+    <div class="area-wrap">
+      <div class="area-title">📍 主な対応エリア</div>
+      <div class="area-tags">
+        <span class="area-tag">一宮市</span>
+        <span class="area-tag">稲沢市</span>
+        <span class="area-tag">江南市</span>
+        <span class="area-tag">各務原市</span>
+        <span class="area-tag">岐阜市南部</span>
+        <span class="area-tag">北名古屋市</span>
+        <span class="area-tag">扶桑町</span>
+        <span class="area-tag">大口町</span>
+        <span class="area-tag">その他近隣エリア</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section" id="contact">
+  <p class="section-label" style="color:var(--green-light);margin-bottom:16px">CONTACT</p>
+  <h2 class="cta-heading" style="font-family:'Noto Serif JP',serif;font-size:clamp(22px,3vw,30px);font-weight:700;color:#fff;margin-bottom:12px">まずは、お気軽にご相談ください</h2>
+  <p style="font-size:15px;color:rgba(255,255,255,.85);margin-bottom:36px;line-height:1.9">相談無料・返信は当日〜翌営業日以内・押し売り一切なし<br>LINEが一番お気軽です。写真を送るだけでもOK。</p>
+  <div class="cta-btns">
+    <a href="https://line.me/ti/p/@012bbuuk" class="btn btn-line btn-lg" target="_blank" rel="noopener">📩 LINEで無料相談する</a>
+    <a href="tel:0801095879800" class="btn btn-lg btn-tel">📞 080-1095-8798</a>
+  </div>
+  <div class="cta-notes">
+    <div class="cta-note">相談・見積り完全無料</div>
+    <div class="cta-note">断っても大丈夫</div>
+    <div class="cta-note">完全元請け・中間マージンなし</div>
+    <div class="cta-note">一宮・稲沢・江南エリア対応</div>
+  </div>
+  <div class="form-wrap">
+    <div class="form-title">📋 お問い合わせフォーム</div>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label class="form-label" for="name">お名前 <span style="color:var(--green-light)">*</span></label>
+        <input class="form-input" type="text" id="name" name="name" placeholder="山田 太郎" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="contact">ご連絡先（電話またはメール） <span style="color:var(--green-light)">*</span></label>
+        <input class="form-input" type="text" id="contact" name="contact" placeholder="090-xxxx-xxxx または example@mail.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="menu">ご相談内容</label>
+        <select class="form-input" id="menu" name="menu">
+          <option value="" style="color:#333">選択してください（任意）</option>
+          <option value="gaiso">外壁・屋根リフォーム</option>
+          <option value="mizumawari">水回りリフォーム</option>
+          <option value="naiso">内装リフォーム</option>
+          <option value="shoene">省エネ設備（太陽光・蓄電池）</option>
+          <option value="gaiko">外構・解体</option>
+          <option value="other">その他・まずは相談したい</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">お悩みの内容（任意）</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="例）築20年の外壁が気になっている。費用感だけでも知りたい。"></textarea>
+      </div>
+      <button type="submit" class="form-submit">送信する（無料）</button>
+      <div class="form-privacy"><a href="#">個人情報の取り扱いについて</a></div>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">すまいPLUS</div>
+  <div class="footer-fc">住まいサポートPRO 公式加盟店（株式会社EBISUGROUP）</div>
+  <div class="footer-address">愛知県一宮市｜対応エリア：一宮・稲沢・江南・各務原・岐阜南部</div>
+  <div class="footer-tel">📞 080-1095-8798</div>
+  <div class="footer-copy">© 2025 すまいPLUS All Rights Reserved.</div>
+</footer>
+
+<!-- FIXED MOBILE CTA -->
+<div class="fixed-cta">
+  <a href="https://line.me/ti/p/@012bbuuk" class="btn btn-line" style="flex:1;text-align:center;" target="_blank" rel="noopener">📩 LINE相談（無料）</a>
+  <a href="tel:0801095879800" class="btn btn-outline" style="flex:1;text-align:center;">📞 電話する</a>
+</div>
+
+</body>
+</html>
