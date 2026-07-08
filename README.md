@@ -17,6 +17,7 @@ GitHub Pages で公開中のページ一覧です。
 | **Sumai＋ メインHP** ✅ | https://yutorin-ino.github.io/sumai-plus/index.html |
 | **Sumai＋ リフォーム概算診断ツール** ✅ | https://yutorin-ino.github.io/sumai-plus/estimator.html |
 | **Sumai＋ プロモーションLP（カルーセル付き）** ✅ | https://yutorin-ino.github.io/sumai-plus/promo.html |
+| **すまいPLUS（住まいサポートPRO加盟店版LP）** ✅ | https://yutorin-ino.github.io/sumai-plus/sumai-plus-fc.html |
 
 ### プロモーション動画スライドショー
 
